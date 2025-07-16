@@ -3,29 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prince Brandford Dodoo Arthur - Architectural Designer</title>
-    
+    <title>Prince Brandford Dodoo Arthur - Architectural & Graphic Designer | Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Prince Brandford Dodoo Arthur is an experienced architectural and graphic designer specializing in residential, commercial, and interior/exterior architecture. View his portfolio of innovative and purposeful designs.">
+    <meta name="keywords" content="architectural designer, graphic designer, architecture, residential architecture, commercial architecture, interior design, exterior design, 3D modeling, Ghana, Prince Brandford Dodoo Arthur, portfolio, building design">
+    <meta name="author" content="Prince Brandford Dodoo Arthur">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/"> <!-- Replace with your actual URL -->
+    <meta property="og:title" content="Prince Brandford Dodoo Arthur - Architectural & Graphic Designer">
+    <meta property="og:description" content="An experienced architectural and graphic designer specializing in residential, commercial, and interior/exterior architecture. View a portfolio of innovative and purposeful designs.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0d2c4f/d4af37?text=PBDA+Design+Portfolio"> <!-- Replace with a relevant image URL -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourwebsite.com/"> <!-- Replace with your actual URL -->
+    <meta property="twitter:title" content="Prince Brandford Dodoo Arthur - Architectural & Graphic Designer">
+    <meta property="twitter:description" content="An experienced architectural and graphic designer specializing in residential, commercial, and interior/exterior architecture. View a portfolio of innovative and purposeful designs.">
+    <meta property="twitter:image" content="https://placehold.co/1200x675/0d2c4f/d4af37?text=PBDA+Design+Portfolio"> <!-- Replace with a relevant image URL -->
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Header Section -->
-    <header class="main-header" id="main-header">
+    <header class="main-header" id="main-header" aria-label="Main Navigation">
         <div class="container navbar">
-            <a href="#hero" class="logo">P.B.D.A</a>
+            <a href="#hero" class="logo" aria-label="Home - Prince Brandford Dodoo Arthur">P.B.D.A</a>
             <nav>
                 <ul class="nav-links" id="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#software">Software</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="menu-toggle" id="menu-toggle">
+            <div class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false" role="button" tabindex="0">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -35,118 +60,272 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="hero" id="hero">
+        <section class="hero" id="hero" aria-label="Hero Section - Architectural Designer">
             <div class="hero-content">
-                <h1 class="reveal">Prince Brandford Dodoo Arthur</h1>
-                <p class="reveal">Architectural Designer</p>
+                <h1 class="hero-title">Prince Brandford Dodoo Arthur</h1>
+                <p class="hero-subtitle">Architectural & Graphic Designer</p>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about">
+        <section id="about" aria-labelledby="about-heading">
             <div class="container">
-                <h2 class="reveal">About Me</h2>
-                <div class="about-content reveal">
+                <h2 id="about-heading">About Me</h2>
+                <div class="about-content">
                     <div class="about-text">
                         <h3>Design that Resonates with Purpose and Beauty.</h3>
                         <p>
-                            As an architectural designer, I'm driven by the conviction that exceptional spaces don't just exist; they evolve from a thoughtful understanding of human needs, environmental context, and the inherent poetry of materials. My approach prioritizes a holistic design process, where conceptual innovation meets rigorous technical execution.
+                            As a designer, I'm driven by the conviction that exceptional work doesn't just exist; it evolves from a thoughtful understanding of human needs, environmental context, and the inherent poetry of materials. My approach prioritizes a holistic design process, where conceptual innovation meets rigorous technical execution. This dual passion for architecture and visual communication also makes me a proficient graphic designer, allowing me to bring a unique, cohesive aesthetic to every project.
                         </p>
                         <p>
-                            With 4 years of experience, I thrive on translating complex ideas into tangible forms, creating environments that are not only visually compelling but also deeply functional, sustainable, and capable of enriching the lives of those who inhabit them. My portfolio reflects a commitment to design excellence and a keen eye for detail.
+                            With 4 years of experience, I thrive on translating complex ideas into tangible forms, creating environments and visuals that are not only compelling but also deeply functional, sustainable, and capable of enriching the lives of those who inhabit and interact with them. My portfolio reflects a commitment to design excellence and a keen eye for detail.
+                        </p>
+                        <p>
+                            <strong>My creative drive lies in the dynamic interplay between exterior architecture and interior design. I love exploring how these elements converge to shape compelling and inviting environments.</strong>
                         </p>
                     </div>
-                    <img src="/WhatsApp Image 2025-06-04 at 21.16.16 (1).jpeg" alt="Prince Brandford Dodoo Arthur" class="about-image">
+                    <img src="tinywow_remove_object_82456634.png" alt="Prince Brandford Dodoo Arthur - Architectural Designer" class="about-image" loading="lazy">
                 </div>
             </div>
         </section>
 
         <!-- Portfolio Section -->
-        <section id="portfolio">
+        <section id="portfolio" aria-labelledby="portfolio-heading">
             <div class="container">
-                <h2 class="reveal">My Work</h2>
+                <h2 id="portfolio-heading">My Work</h2>
                 <div class="portfolio-grid">
                     <!-- Project 1 -->
-                    <div class="portfolio-item reveal">
-                        <img src="/man.jpeg" alt="Project 1" class="portfolio-image">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image-container">
+                            <img src="station.jpeg" alt="Interior and exterior design of a filling station" class="portfolio-image" loading="lazy">
+                            <a href="fill.html" class="portfolio-overlay" aria-label="View project details">
+                                <span>View Project</span>
+                            </a>
+                        </div>
                         <div class="portfolio-info">
-                            <h3>Modern Residential Villa</h3>
-                            <p>A sleek, contemporary villa focusing on open spaces and natural light, blurring the lines between interior and exterior.</p>
+                            <h3>Interior and Exterior Design of a Filling Station</h3>
+                            <p>A comprehensive design blending functionality and modern aesthetics for a high-traffic commercial space.</p>
                         </div>
                     </div>
                     <!-- Project 2 -->
-                    <div class="portfolio-item reveal">
-                        <img src="WhatsApp Image 2025-06-06 at 08.31.34.jpeg" alt="Project 2" class="portfolio-image">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image-container">
+                             <img src="tinywow_willian-reis-JwSo36TmqFA-unsplash_82243758.webp" class="portfolio-image" loading="lazy">
+                            <a href="residence.html" class="portfolio-overlay" aria-label="View project details">
+                                <span>View Project</span>
+                            </a>
+                        </div>
                         <div class="portfolio-info">
-                            <h3>Corporate Headquarters</h3>
-                            <p>A design for a commercial hub that fosters collaboration and innovation through dynamic and flexible workspaces.</p>
+                            <h3>Modern Residence Villa</h3>
+                            <p>A sleek, contemporary villa focusing on open spaces and natural light to create a luxurious living experience.</p>
                         </div>
                     </div>
                     <!-- Project 3 -->
-                    <div class="portfolio-item reveal">
-                        <img src="/a5d4987a-5316-43f8-81ba-1451ddf8b72f.jpg" alt="Project 3" class="portfolio-image">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image-container">
+                            <img src="headquarters.jpeg" alt="A minimal villa project" class="portfolio-image" loading="lazy">
+                            <a href="#" class="portfolio-overlay" aria-label="View project details">
+                                <span>View Project</span>
+                            </a>
+                        </div>
                         <div class="portfolio-info">
-                            <h3>3D Modeling</h3>
-                            <p>Anmpdel design project focused on raw materials, modern design, and a minimalist aesthetic for a serene urban living space.</p>
+                            <h3>Corperate Headquters Project</h3>
+                            <p>Embracing simplicity and clean lines to design a serene and elegant corperate work space.</p>
                         </div>
                     </div>
-                     <!-- Project 4 (Add more as needed) -->
-                    <div class="portfolio-item reveal">
-                        <img src="/606a79f6-a06d-473d-82cb-e843838461c2.jpg" alt="Project 4" class="portfolio-image">
+                    <!-- Project 4 -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image-container">
+                            <img src="WhatsApp Image 2025-07-14 at 19.13.35 (1).jpeg" alt="A library project" class="portfolio-image" loading="lazy">
+                            <a href="library.html" class="portfolio-overlay" aria-label="View project details">
+                                <span>View Project</span>
+                            </a>
+                        </div>
                         <div class="portfolio-info">
-                            <h3>Facade Renovation</h3>
-                            <p>Reimagining a building's exterior to improve its environmental performance and aesthetic appeal within the urban landscape.</p>
+                            <h3>A Library Project</h3>
+                            <p>Designing an inspiring and functional public space for learning, community, and quiet contemplation.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Services Section -->
-        <section id="services">
-            <div class="container">
-                <h2 class="reveal">Specializations</h2>
-                <div class="services-grid">
-                    <div class="service-card reveal">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
-                        <h3>Residential Architecture</h3>
-                        <p>Crafting bespoke homes that reflect the personality and lifestyle of their inhabitants.</p>
+                    <!-- Project 5 -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image-container">
+                            <img src="twobedapart.jpeg" alt="2 bedroom apartment semi-detach project" class="portfolio-image" loading="lazy">
+                            <a href="2bed.html" class="portfolio-overlay" aria-label="View project details">
+                                <span>View Project</span>
+                            </a>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>2 Bedroom Semi-Detached Apartment</h3>
+                            <p>A practical and stylish housing solution maximizing space and comfort for modern living.</p>
+                        </div>
                     </div>
-                     <div class="service-card reveal">
-                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6.75h1.5m-1.5 3h1.5m-1.5 3h1.5M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" /></svg>
-                        <h3>Commercial Architecture</h3>
-                        <p>Designing functional and inspiring commercial spaces that enhance productivity and brand identity.</p>
+                    <!-- Project 6 -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image-container">
+                            <img src="man.jpeg" class="portfolio-image" loading="lazy">
+                            <a href="#" class="portfolio-overlay" aria-label="View project details">
+                                <span>View Project</span>
+                            </a>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>A Residence Apartment Project</h3>
+                            <p>Crafting a cohesive and elegant design for a multi-unit residential building.</p>
+                        </div>
                     </div>
-                     <div class="service-card reveal">
-                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5.337 14.56a2.25 2.25 0 0 1-1.59.659H1.5V18c0 1.105.895 2 2 2h17c1.105 0 2-.895 2-2v-2.781a2.25 2.25 0 0 1-.659-1.591L19.34 8.409a2.25 2.25 0 0 1-.659-1.591V3.104a2.25 2.25 0 0 0-2.25-2.25H12a2.25 2.25 0 0 0-2.25 2.25Z" /></svg>
-                        <h3>Interior & Exterior</h3>
-                        <p>Creating a seamless aesthetic from the building facade to the finest interior details.</p>
+                     <!-- Project 7 -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image-container">
+                            <img src="man.jpeg" alt="A multi-storey apartment interior and exterior project" class="portfolio-image" loading="lazy">
+                            <a href="#" class="portfolio-overlay" aria-label="View project details">
+                                <span>View Project</span>
+                            </a>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Multi-Storey Apartment</h3>
+                            <p>Integrated interior and exterior design for a large-scale residential complex.</p>
+                        </div>
+                    </div>
+                     <!-- Project 8 -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image-container">
+                            <img src="churchinterior.jpeg" alt="Church interior design" class="portfolio-image" loading="lazy">
+                            <a href="churchI.htm" class="portfolio-overlay" aria-label="View project details">
+                                <span>View Project</span>
+                            </a>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Church Interior Design</h3>
+                            <p>Creating a serene, spiritual, and welcoming atmosphere for a place of worship.</p>
+                        </div>
+                    </div>
+                     <!-- Project 9 -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image-container">
+                            <img src="graphic designs/WhatsApp Image 2025-07-14 at 18.52.05 (1).jpeg" alt="An interior and exterior design of a filling station" class="portfolio-image" loading="lazy">
+                            <a href="design.html" class="portfolio-overlay" aria-label="View project details">
+                                <span>View Project</span>
+                            </a>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Graphic Designs</h3>
+                            <p>A second, unique take on designing a functional and visually appealing commercial service station.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
+        <!-- Services Section -->
+        <section id="services" aria-labelledby="services-heading">
             <div class="container">
-                <h2 class="reveal">Get In Touch</h2>
-                <div class="contact-content reveal">
+                <h2 id="services-heading">Specializations</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" focusable="false">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                        </svg>
+                        <h3>Residential Architecture</h3>
+                        <p>Crafting bespoke homes that reflect the personality and lifestyle of their inhabitants.</p>
+                    </div>
+                    <div class="service-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" focusable="false">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6.75h1.5m-1.5 3h1.5m-1.5 3h1.5M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+                        </svg>
+                        <h3>Commercial Architecture</h3>
+                        <p>Designing functional and inspiring commercial spaces that enhance productivity and brand identity.</p>
+                    </div>
+                    <div class="service-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" focusable="false">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5.337 14.56a2.25 2.25 0 0 1-1.59.659H1.5V18c0 1.105.895 2 2 2h17c1.105 0 2-.895 2-2v-2.781a2.25 2.25 0 0 1-.659-1.591L19.34 8.409a2.25 2.25 0 0 1-.659-1.591V3.104a2.25 2.25 0 0 0-2.25-2.25H12a2.25 2.25 0 0 0-2.25 2.25Z" />
+                        </svg>
+                        <h3>Interior & Exterior</h3>
+                        <p>Creating a seamless aesthetic from the building facade to the finest interior details.</p>
+                    </div>
+                     <!-- NEW: Graphic Design Service -->
+                    <div class="service-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" focusable="false">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                        </svg>
+                        <h3>Graphic Design</h3>
+                        <p>Creating impactful visual identities, logos, and marketing materials that tell a compelling story.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Software Section -->
+        <section id="software" aria-labelledby="software-heading">
+            <div class="container">
+                <h2 id="software-heading">My Digital Toolkit</h2>
+                <div class="software-grid">
+                    <figure class="software-item">
+                        <img src="WhatsApp Image 2025-07-07 at 21.24.01.jpeg" alt="Autodesk AutoCAD logo" loading="lazy">
+                        <figcaption>AutoCAD</figcaption>
+                    </figure>
+                    <figure class="software-item">
+                        <img src="WhatsApp Image 2025-07-07 at 21.24.00.jpeg" alt="Autodesk Revit logo" loading="lazy">
+                        <figcaption>Revit</figcaption>
+                    </figure>
+                    <figure class="software-item">
+                        <img src="WhatsApp Image 2025-07-07 at 21.24.00 (1).jpeg" alt="SketchUp logo" loading="lazy">
+                        <figcaption>SketchUp</figcaption>
+                    </figure>
+                    <figure class="software-item">
+                        <img src="WhatsApp Image 2025-07-07 at 21.24.01 (2).jpeg" alt="Autodesk 3ds Max logo" loading="lazy">
+                        <figcaption>3ds Max</figcaption>
+                    </figure>
+                    <figure class="software-item">
+                        <img src="WhatsApp Image 2025-07-07 at 21.24.01 (3).jpeg" alt="Twinmotion logo" loading="lazy">
+                        <figcaption>Twinmotion</figcaption>
+                    </figure>
+                    <figure class="software-item">
+                        <img src="WhatsApp Image 2025-07-07 at 21.24.00 (3).jpeg" alt="Rhinoceros 3D logo" loading="lazy">
+                        <figcaption>Rhinoceros</figcaption>
+                    </figure>
+                    <figure class="software-item">
+                        <img src="WhatsApp Image 2025-07-07 at 21.24.01 (1).jpeg" alt="Adobe Photoshop logo" loading="lazy">
+                        <figcaption>Photoshop</figcaption>
+                    </figure>
+                    <figure class="software-item">
+                        <img src="WhatsApp Image 2025-07-07 at 21.24.00 (2).jpeg" alt="CorelDRAW logo" loading="lazy">
+                        <figcaption>CorelDRAW</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <h2 id="contact-heading">Get In Touch</h2>
+                <div class="contact-content">
                     <div class="contact-info">
                         <h3>Let's build something together.</h3>
                         <p>If you have a project in mind or would like to discuss a potential collaboration, feel free to reach out.</p>
                         <p><strong>Email:</strong><br> <a href="mailto:princebrandforddodooarthur@gmail.com">princebrandforddodooarthur@gmail.com</a></p>
                         <p><strong>Phone:</strong><br> <a href="tel:0531744867">0531744867</a> / <a href="tel:0508533636">050 853 3636</a></p>
-                        <p><strong>LinkedIn:</strong><br> <a href="https://www.linkedin.com/in/prince-b-dodoo-arthur-412675352" target="_blank">View Profile</a></p>
+                        <p><strong>LinkedIn:</strong><br> <a href="https://www.linkedin.com/in/prince-b-dodoo-arthur-412675352" target="_blank" rel="noopener noreferrer">View Profile</a></p>
                     </div>
-                    <form class="contact-form">
+                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        
+                        <!-- IMPORTANT: Replace "YOUR_ACCESS_KEY_HERE" with your actual Web3Forms access key -->
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        
+                        <!-- Optional: Customize the subject line of the email you receive -->
+                        <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
+                        <input type="hidden" name="from_name" value="Portfolio Website">
+
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
+                            <label for="name" class="sr-only">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required aria-label="Your Name">
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
+                            <label for="email" class="sr-only">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required aria-label="Your Email">
                         </div>
                         <div class="form-group">
-                            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                            <label for="message" class="sr-only">Your Message</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Your Message" required aria-label="Your Message"></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
@@ -161,89 +340,161 @@
             <p>&copy; 2024 Prince Brandford Dodoo Arthur. All Rights Reserved.</p>
         </div>
     </footer>
-    
+
     <!-- Back to top button -->
     <a href="#hero" class="back-to-top" aria-label="Back to top">↑</a>
 
-    <!-- JavaScript -->
+    <!-- Message Box for Form Submission -->
+    <div id="messageBox" class="message-box"></div>
+
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Prince Brandford Dodoo Arthur",
+      "jobTitle": ["Architectural Designer", "Graphic Designer"],
+      "url": "https://yourwebsite.com/",
+      "image": "https://placehold.co/200x200/d4af37/0d2c4f?text=P.B.D.A",
+      "sameAs": [
+        "https://www.linkedin.com/in/prince-b-dodoo-arthur-412675352"
+      ],
+      "knowsAbout": ["Architecture", "Graphic Design", "Interior Design", "3D Modeling", "AutoCAD", "Revit", "SketchUp", "3ds Max", "Twinmotion", "Photoshop"]
+    }
+    </script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const header = document.getElementById('main-header');
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.getElementById('nav-links');
-            const backToTopBtn = document.querySelector('.back-to-top');
-            const heroSection = document.querySelector('.hero');
+            // GSAP Animations
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Hero Parallax
+            gsap.to(".hero::before", {
+                scrollTrigger: {
+                    trigger: ".hero",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                },
+                y: 250
+            });
             
-            // --- Header Scroll Effect ---
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
+            // Fade in animations for sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const elements = section.querySelectorAll('.container > *, .about-content > *, .services-grid > *, .portfolio-grid > *, .software-grid > *, .contact-content > *');
+                gsap.from(elements, {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 80%',
+                        toggleActions: 'play none none none',
+                    },
+                    opacity: 0,
+                    y: 50,
+                    duration: 0.8,
+                    stagger: 0.2,
+                    ease: 'power3.out'
+                });
             });
 
-            // --- Parallax Hero Effect ---
-            // Disabled on very small screens to save performance
-            if (window.innerWidth > 768) {
-                window.addEventListener('scroll', () => {
-                    let offset = window.pageYOffset;
-                    heroSection.style.backgroundPositionY = offset * 0.7 + 'px';
-                });
-            }
-
-            // --- Mobile Menu Toggle ---
+            // Mobile Menu
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
             menuToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
                 menuToggle.classList.toggle('active');
+                const isExpanded = navLinks.classList.contains('active');
+                menuToggle.setAttribute('aria-expanded', isExpanded);
             });
             
-            // --- Close mobile menu when a link is clicked ---
-            document.querySelectorAll('#nav-links li a').forEach(link => {
+            // Close mobile menu when a link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    menuToggle.classList.remove('active');
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
                 });
             });
 
-            // --- Reveal Elements on Scroll ---
-            const revealElements = document.querySelectorAll('.reveal');
-            const revealOnScroll = () => {
-                const windowHeight = window.innerHeight;
-                revealElements.forEach(el => {
-                    const elementTop = el.getBoundingClientRect().top;
-                    const elementVisible = 150; // distance from bottom of screen to start reveal
-                    
-                    if (elementTop < windowHeight - elementVisible) {
-                        el.classList.add('active');
-                    } else {
-                        // Optional: remove active class to re-trigger animation on scroll up
-                        // el.classList.remove('active'); 
-                    }
-                });
-            };
 
-            window.addEventListener('scroll', revealOnScroll);
-            revealOnScroll(); // Initial check on load
-
-            // --- Back to Top Button ---
-            window.addEventListener('scroll', () => {
-                if(window.scrollY > 300) {
-                    backToTopBtn.classList.add('visible');
+            // Sticky Header
+            const header = document.getElementById('main-header');
+            let lastScrollTop = 0;
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
+                    // Scroll Down
+                    header.style.top = `-${header.offsetHeight}px`;
                 } else {
-                    backToTopBtn.classList.remove('visible');
+                    // Scroll Up
+                    header.style.top = '0';
+                }
+                if (scrollTop > 100) {
+                    header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
+                } else {
+                    header.style.boxShadow = 'none';
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            }, false);
+
+            // Back to Top Button
+            const backToTopButton = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
                 }
             });
 
-            // --- Contact Form ---
+            // Contact Form Submission
             const form = document.querySelector('.contact-form');
-            form.addEventListener('submit', function(e) {
+            const messageBox = document.getElementById('messageBox');
+            
+            form.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                // This is for demonstration. For a real site, you'd connect this to a service 
-                // like Formspree, Netlify Forms, or a backend server to actually send the email.
-                alert('Thank you for your message! This is a demo form.');
-                form.reset();
+                const formData = new FormData(form);
+                const object = {};
+                formData.forEach((value, key) => {
+                    object[key] = value;
+                });
+                const json = JSON.stringify(object);
+                
+                // Show a pending message
+                showMessage('Sending message...');
+
+                try {
+                    const response = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    });
+                    const result = await response.json();
+                    if (result.success) {
+                        showMessage('Message sent successfully!');
+                        form.reset();
+                    } else {
+                        console.error('Submission error:', result);
+                        showMessage(result.message || 'An error occurred.');
+                    }
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                    showMessage('An error occurred. Please try again.');
+                }
             });
+
+            function showMessage(message) {
+                messageBox.textContent = message;
+                messageBox.classList.add('show');
+                setTimeout(() => {
+                    messageBox.classList.remove('show');
+                }, 4000);
+            }
         });
     </script>
 </body>
