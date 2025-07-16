@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Brandford Dodoo Arthur - Architectural & Graphic Designer | Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Prince Brandford Dodoo Arthur is an experienced architectural and graphic designer specializing in residential, commercial, and interior/exterior architecture. View his portfolio of innovative and purposeful designs.">
+    <meta name="keywords" content="architectural designer, graphic designer, architecture, residential architecture, commercial architecture, interior design, exterior design, 3D modeling, Ghana, Prince Brandford Dodoo Arthur, portfolio, building design">
+    <meta name="author" content="Prince Brandford Dodoo Arthur">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/"> <!-- Replace with your actual URL -->
+    <meta property="og:title" content="Prince Brandford Dodoo Arthur - Architectural & Graphic Designer">
+    <meta property="og:description" content="An experienced architectural and graphic designer specializing in residential, commercial, and interior/exterior architecture. View a portfolio of innovative and purposeful designs.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0d2c4f/d4af37?text=PBDA+Design+Portfolio"> <!-- Replace with a relevant image URL -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourwebsite.com/"> <!-- Replace with your actual URL -->
+    <meta property="twitter:title" content="Prince Brandford Dodoo Arthur - Architectural & Graphic Designer">
+    <meta property="twitter:description" content="An experienced architectural and graphic designer specializing in residential, commercial, and interior/exterior architecture. View a portfolio of innovative and purposeful designs.">
+    <meta property="twitter:image" content="https://placehold.co/1200x675/0d2c4f/d4af37?text=PBDA+Design+Portfolio"> <!-- Replace with a relevant image URL -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <style>
+        /* CSS Reset and Global Styles */
+        :root {
+            --primary-color: #0d2c4f; /* Deep Navy Blue */
+            --secondary-color: #d4af37; /* Gold Accent */
+            --light-gray: #f4f4f4;
+            --dark-gray: #333;
+            --text-color: #4a4a4a;
+            --white: #ffffff;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition-speed: 0.5s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        section {
+            padding: 6rem 0;
+            overflow: hidden; /* Important for reveal animations */
+        }
+
+        /* Header and Navigation */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            position: relative;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: var(--secondary-color);
+            transition: width .3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+            background-color: var(--secondary-color);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 4px 0;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        /* Animated state for hamburger icon */
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+
+        /* Hero Section with Parallax */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%; 
+            background: url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop') no-repeat center center / cover;
+            z-index: 0;
+            transform: translateY(0);
+            will-change: transform;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 44, 79, 0.7);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--secondary-color);
+        }
+
+        /* About Section */
+        #about {
+            background: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        .about-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background-color: var(--light-gray);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            position: relative; /* Crucial for overlay positioning */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Portfolio Overlay */
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 44, 79, 0.85); /* Dark blue overlay */
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay span {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            border: 2px solid var(--secondary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .portfolio-overlay:hover span {
+             background-color: var(--secondary-color);
+             color: var(--primary-color);
+        }
+
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+
+        .portfolio-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        /* Services Section */
+        #services {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .service-card {
+            padding: 2.5rem 1.5rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .service-card svg {
+            width: 50px;
+            height: 50px;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--light-gray);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1.5rem;
+        }
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .contact-info a:hover {
+            color: var(--secondary-color);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Message Box for Form Submission */
+        .message-box {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .message-box.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .project-detail-block {
+                flex-direction: column; /* Stack image and text vertically */
+                gap: 2rem;
+            }
+            .project-detail-block:nth-child(even) {
+                flex-direction: column; /* Maintain vertical stacking for alternating blocks */
+            }
+            .project-detail-image,
+            .project-detail-text {
+                min-width: 100%; /* Full width on smaller screens */
+            }
+            .lightbox-nav-arrow {
+                font-size: 2.5rem;
+                padding: 5px;
+            }
+            .lightbox-nav-arrow.left {
+                left: 10px;
+            }
+            .lightbox-nav-arrow.right {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
+            .project-intro h1 {
+                font-size: 2.5rem;
+            }
+            .project-intro p {
+                font-size: 1rem;
+            }
+            /* Mobile Navigation Overrides */
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%; /* Off-screen by default */
+                width: 70%;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                right: 0; /* Slide in when active */
+            }
+
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+
+            .menu-toggle {
+                display: flex; /* Show hamburger icon */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr; /* Single column on very small screens */
+            }
+            .gallery-item img {
+                height: 200px; /* Adjust thumbnail height for smaller screens */
+            }
+            .lightbox-nav-arrow {
+                display: none; /* Hide arrows on very small screens to rely on swipe */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="main-header" id="main-header" aria-label="Main Navigation">
+        <div class="container navbar">
+            <!-- Link back to the homepage -->
+            <a href="index.html" class="logo" aria-label="Home - Prince Brandford Dodoo Arthur">P.B.D.A</a>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <!-- Links pointing to sections on the homepage -->
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false" role="button" tabindex="0">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Project Introduction Section -->
+        <section class="project-intro" aria-labelledby="project-title">
+            <div class="container">
+                <h1 id="project-title">Minimal Villa Project</h1>
+                <p>
+                    A sleek, contemporary villa designed with a profound emphasis on open spaces, abundant natural light, and a seamless connection between interior and exterior environments. This project embodies modern luxury through minimalist aesthetics and purposeful design.
+                </p>
+            </div>
+        </section>
+
+        <!-- Project Overview/Details Sections -->
+        <section class="project-details-section">
+            <div class="container">
+                <h2 class="section-heading">Project Highlights</h2>
+
+                <!-- Project Detail Block 1: Exterior Design -->
+                <div class="project-detail-block">
+                    <div class="project-detail-image">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop" alt="Modern Minimalist Villa Exterior" loading="lazy">
+                    </div>
+                    <div class="project-detail-text">
+                        <h3>Striking Exterior & Landscaping</h3>
+                        <p>
+                            The exterior design features clean lines, large glass panels, and a harmonious blend of concrete, wood, and steel. The landscaping is integrated to enhance the architectural form, creating private outdoor living spaces and a strong curb appeal.
+                        </p>
+                        <p>
+                            Careful consideration was given to sun path analysis and wind direction to optimize natural ventilation and minimize energy consumption, contributing to the villa's sustainable design.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project Detail Block 2: Open Concept Living -->
+                <div class="project-detail-block">
+                    <div class="project-detail-image">
+                        <img src="https://images.unsplash.com/photo-1599696238382-7798b3f2e1e0?q=80&w=2070&auto=format&fit=crop" alt="Open concept living room and dining area" loading="lazy">
+                    </div>
+                    <div class="project-detail-text">
+                        <h3>Expansive Open Concept Living</h3>
+                        <p>
+                            The interior boasts an open-plan layout, where the living, dining, and kitchen areas flow seamlessly into one another. This design maximizes space and encourages social interaction, making it perfect for modern family life and entertaining guests.
+                        </p>
+                        <p>
+                            High ceilings and strategically placed windows flood the space with natural light, creating an airy and inviting atmosphere throughout the day.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project Detail Block 3: Master Suite & Private Retreats -->
+                <div class="project-detail-block">
+                    <div class="project-detail-image">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11183a62?q=80&w=2070&auto=format&fit=crop" alt="Luxurious master bedroom with a view" loading="lazy">
+                    </div>
+                    <div class="project-detail-text">
+                        <h3>Luxurious Master Suite & Private Retreats</h3>
+                        <p>
+                            Each bedroom is designed as a private sanctuary, with the master suite offering panoramic views, a spacious walk-in closet, and an en-suite bathroom featuring high-end finishes and a freestanding tub.
+                        </p>
+                        <p>
+                            The design ensures privacy and comfort, with bespoke joinery and integrated lighting creating a serene and sophisticated ambiance.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Image Gallery Section -->
+        <section id="villa-gallery" aria-labelledby="gallery-heading" style="background-color: var(--light-gray);">
+            <div class="container">
+                <h2 id="gallery-heading">Photo Gallery</h2>
+                <div class="gallery-grid">
+                    <!-- Gallery Item 1: Front Exterior -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop" alt="Front view of the modern villa">
+                        <div class="gallery-description">
+                            <h3>Front Facade</h3>
+                            <p>The inviting entrance and minimalist exterior.</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 2: Backyard with Pool -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1570129476811-dd397120a103?q=80&w=2070&auto=format&fit=crop" alt="Backyard with swimming pool and lounge area">
+                        <div class="gallery-description">
+                            <h3>Poolside Oasis</h3>
+                            <p>Integrated pool and outdoor living space.</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 3: Living Room Interior -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1599696238382-7798b3f2e1e0?q=80&w=2070&auto=format&fit=crop" alt="Spacious living room interior">
+                        <div class="gallery-description">
+                            <h3>Living Room</h3>
+                            <p>Open-plan living with abundant natural light.</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 4: Kitchen Area -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1556912172-45b7cdc5c781?q=80&w=2070&auto=format&fit=crop" alt="Modern kitchen with island and bar stools">
+                        <div class="gallery-description">
+                            <h3>Gourmet Kitchen</h3>
+                            <p>Sleek design and state-of-the-art appliances.</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 5: Master Bedroom -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11183a62?q=80&w=2070&auto=format&fit=crop" alt="Master bedroom with minimalist decor">
+                        <div class="gallery-description">
+                            <h3>Master Bedroom</h3>
+                            <p>A serene and luxurious private retreat.</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 6: Bathroom -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1571252030999-d419369a4731?q=80&w=2070&auto=format&fit=crop" alt="Modern bathroom with freestanding tub">
+                        <div class="gallery-description">
+                            <h3>Spa-like Bathroom</h3>
+                            <p>Elegant design with high-end fixtures.</p>
+                        </div>
+                    </div>
+                    <!-- Add more gallery items as needed -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Prince Brandford Dodoo Arthur. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for Expanded Images -->
+    <div class="lightbox-overlay" id="lightbox">
+        <span class="lightbox-close" aria-label="Close image gallery">&times;</span>
+        <div class="lightbox-content">
+            <img src="" alt="Expanded Image" class="lightbox-image" id="lightboxImage">
+            <!-- Navigation arrows for larger screens -->
+            <span class="lightbox-nav-arrow left" id="prevImage" aria-label="Previous image">&#10094;</span>
+            <span class="lightbox-nav-arrow right" id="nextImage" aria-label="Next image">&#10095;</span>
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-links a, .logo').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                // Check if the link is an internal anchor on the current page
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    const navLinks = document.getElementById('nav-links');
+                    const menuToggle = document.getElementById('menu-toggle');
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                } else if (href.startsWith('index.html#')) {
+                    // For links pointing to anchors on the homepage, let the browser handle navigation
+                    // This ensures correct page load and then scroll
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            // Toggle aria-expanded attribute for accessibility
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // Close mobile menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        // Back to top button visibility
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        /* --- New JavaScript for Gallery and Lightbox Functionality --- */
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const closeBtn = document.querySelector('.lightbox-close');
+        const prevBtn = document.getElementById('prevImage');
+        const nextBtn = document.getElementById('nextImage');
+
+        let currentImageIndex = 0;
+        let images = []; // Array to store all image sources for navigation
+
+        // Populate images array and add click listeners to gallery items
+        galleryItems.forEach((item, index) => {
+            const imgSrc = item.querySelector('img').src;
+            images.push(imgSrc); // Add image source to the array
+
+            item.addEventListener('click', () => {
+                currentImageIndex = index; // Set current index to the clicked image
+                openLightbox(imgSrc);
+            });
+        });
+
+        // Function to open the lightbox
+        function openLightbox(src) {
+            lightboxImage.src = src; // Set the source of the expanded image
+            lightbox.classList.add('active'); // Show the lightbox
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        // Function to close the lightbox
+        function closeLightbox() {
+            lightbox.classList.remove('active'); // Hide the lightbox
+            document.body.style.overflow = ''; // Restore background scrolling
+        }
+
+        // Function to show the next image in the gallery
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length; // Loop back to start if at end
+            lightboxImage.src = images[currentImageIndex];
+        }
+
+        // Function to show the previous image in the gallery
+        function showPrevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; // Loop to end if at start
+            lightboxImage.src = images[currentImageIndex];
+        }
+
+        // Event Listeners for Lightbox Controls
+        closeBtn.addEventListener('click', closeLightbox); // Close button click
+        prevBtn.addEventListener('click', showPrevImage);   // Previous arrow click
+        nextBtn.addEventListener('click', showNextImage);   // Next arrow click
+
+        // Close lightbox on Escape key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+
+        // Swipe functionality for touch devices (on the lightbox)
+        let startX; // To store the starting X coordinate of a touch
+
+        lightbox.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX; // Get initial touch position
+        });
+
+        lightbox.addEventListener('touchend', (e) => {
+            if (!startX) return; // If no start position, exit
+
+            const endX = e.changedTouches[0].clientX; // Get end touch position
+            const diffX = startX - endX; // Calculate horizontal difference
+
+            // Define a threshold for a valid swipe (e.g., 50 pixels)
+            const swipeThreshold = 50;
+
+            if (diffX > swipeThreshold) {
+                // Swiped left (dragged left), show next image
+                showNextImage();
+            } else if (diffX < -swipeThreshold) {
+                // Swiped right (dragged right), show previous image
+                showPrevImage();
+            }
+            startX = null; // Reset startX for the next swipe
+        });
+
+        // GSAP Animations (similar to homepage for smooth reveals)
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Fade in sections on scroll
+        gsap.utils.toArray('section:not(.hero)').forEach(section => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%', // When the top of the section hits 80% of viewport height
+                    end: 'bottom top',
+                    toggleActions: 'play none none none',
+                    once: true // Animation plays only once
+                }
+            });
+        });
+
+        // Animate gallery items individually
+        gsap.utils.toArray('.gallery-item').forEach(item => {
+            gsap.from(item, {
+                opacity: 0,
+                scale: 0.9,
+                duration: 0.8,
+                ease: 'back.out(1.7)',
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 90%',
+                    toggleActions: 'play none none none',
+                    once: true
+                }
+            });
+        });
+    </script>
+</body>
+</html>

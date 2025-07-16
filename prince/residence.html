@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Brandford Dodoo Arthur - Residence Apartment Project</title>
+
+    <!-- SEO Meta Tags (Update for this specific project page) -->
+    <meta name="description" content="Explore the Residence Apartment Project by Prince Brandford Dodoo Arthur, showcasing modern and functional apartment designs for urban living, focusing on comfort and style.">
+    <meta name="keywords" content="residence apartment, apartment design, urban living, modern apartment, residential architecture, interior design, Prince Brandford Dodoo Arthur, Ghana">
+    <meta name="author" content="Prince Brandford Dodoo Arthur">
+
+    <!-- Open Graph / Facebook / LinkedIn (Update for this specific project page) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/residence-apartment.html"> <!-- Replace with your actual URL -->
+    <meta property="og:title" content="Prince Brandford Dodoo Arthur - Residence Apartment Project">
+    <meta property="og:description" content="Detailed portfolio of a modern residence apartment project by Prince Brandford Dodoo Arthur.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0d2c4f/d4af37?text=Residence+Apartment+Project"> <!-- Replace with a relevant image URL -->
+
+    <!-- Twitter (Update for this specific project page) -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourwebsite.com/residence-apartment.html"> <!-- Replace with your actual URL -->
+    <meta property="twitter:title" content="Prince Brandford Dodoo Arthur - Residence Apartment Project">
+    <meta property="twitter:description" content="Detailed portfolio of a modern residence apartment project by Prince Brandford Dodoo Arthur.">
+    <meta property="twitter:image" content="https://placehold.co/1200x675/0d2c4f/d4af37?text=Residence+Apartment+Project"> <!-- Replace with a relevant image URL -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- GSAP CDN (if you want to use it for animations on this page too) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <style>
+        /* CSS Reset and Global Styles - Copied from your homepage for consistency */
+        :root {
+            --primary-color: #0d2c4f; /* Deep Navy Blue */
+            --secondary-color: #d4af37; /* Gold Accent */
+            --light-gray: #f4f4f4;
+            --dark-gray: #333;
+            --text-color: #4a4a4a;
+            --white: #ffffff;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition-speed: 0.5s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        section {
+            padding: 6rem 0;
+            overflow: hidden; /* Important for reveal animations */
+        }
+
+        /* Header and Navigation - Adapted for project page */
+        .main-header {
+            position: sticky; /* Changed to sticky for project page to stay at top when scrolling */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9); /* Slightly more opaque for clarity on project page */
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            transition: all var(--transition-speed) ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Added subtle shadow */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            position: relative;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: var(--secondary-color);
+            transition: width .3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+            background-color: var(--secondary-color);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 4px 0;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        /* Animated state for hamburger icon */
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        /* Project Introduction Section */
+        .project-intro {
+            padding-top: 10rem; /* Adjust for fixed/sticky header height */
+            text-align: center;
+            background-color: var(--light-gray);
+            padding-bottom: 4rem;
+        }
+
+        .project-intro h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .project-intro p {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* Project Details Sections (Image with Description) */
+        .project-details-section {
+            background-color: var(--white);
+            padding-top: 4rem;
+            padding-bottom: 6rem;
+        }
+
+        .project-detail-block {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 6rem; /* Space between blocks */
+        }
+
+        .project-detail-block:nth-child(even) {
+            flex-direction: row-reverse; /* Alternate image and text for visual interest */
+        }
+
+        .project-detail-image {
+            flex: 1;
+            min-width: 40%; /* Ensures image takes up a good portion of space */
+        }
+
+        .project-detail-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .project-detail-text {
+            flex: 1.5; /* Text takes more space than image */
+            min-width: 50%;
+        }
+
+        .project-detail-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .project-detail-text p {
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        /* Image Gallery Section */
+        #apartment-gallery { /* Unique ID for this gallery */
+            background-color: var(--light-gray);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px; /* Fixed height for consistent gallery thumbnail look */
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05); /* Subtle zoom on hover */
+        }
+
+        .gallery-description {
+            padding: 1rem 1.5rem;
+            background: var(--white);
+            min-height: 100px; /* Ensure consistent height for description area */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .gallery-description h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .gallery-description p {
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        /* Lightbox/Modal Styles for Expanded Images */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9); /* Dark overlay */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000; /* High z-index to appear on top */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-content {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 90%; /* Max width of the content area */
+            max-height: 90%; /* Max height of the content area */
+            width: fit-content;
+            height: fit-content;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 80vh; /* Limit image height to prevent overflow on smaller screens */
+            object-fit: contain; /* Ensures the entire image is visible without cropping */
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--white);
+            font-size: 2.5rem;
+            cursor: pointer;
+            z-index: 2001; /* Above the image */
+            transition: color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: var(--secondary-color);
+        }
+
+        .lightbox-nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--white);
+            font-size: 3rem;
+            cursor: pointer;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+            border-radius: 50%;
+            transition: background 0.3s ease, transform 0.3s ease;
+            user-select: none; /* Prevent text selection when clicking */
+        }
+
+        .lightbox-nav-arrow:hover {
+            background: rgba(0, 0, 0, 0.6);
+            transform: translateY(-50%) scale(1.1); /* Subtle scale on hover */
+        }
+
+        .lightbox-nav-arrow.left {
+            left: 20px;
+        }
+
+        .lightbox-nav-arrow.right {
+            right: 20px;
+        }
+
+        /* Footer - Copied from homepage */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Back to top button - Copied from homepage */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .project-detail-block {
+                flex-direction: column; /* Stack image and text vertically */
+                gap: 2rem;
+            }
+            .project-detail-block:nth-child(even) {
+                flex-direction: column; /* Maintain vertical stacking for alternating blocks */
+            }
+            .project-detail-image,
+            .project-detail-text {
+                min-width: 100%; /* Full width on smaller screens */
+            }
+            .lightbox-nav-arrow {
+                font-size: 2.5rem;
+                padding: 5px;
+            }
+            .lightbox-nav-arrow.left {
+                left: 10px;
+            }
+            .lightbox-nav-arrow.right {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
+            .project-intro h1 {
+                font-size: 2.5rem;
+            }
+            .project-intro p {
+                font-size: 1rem;
+            }
+            /* Mobile Navigation Overrides */
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%; /* Off-screen by default */
+                width: 70%;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                right: 0; /* Slide in when active */
+            }
+
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+
+            .menu-toggle {
+                display: flex; /* Show hamburger icon */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr; /* Single column on very small screens */
+            }
+            .gallery-item img {
+                height: 200px; /* Adjust thumbnail height for smaller screens */
+            }
+            .lightbox-nav-arrow {
+                display: none; /* Hide arrows on very small screens to rely on swipe */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="main-header" id="main-header" aria-label="Main Navigation">
+        <div class="container navbar">
+            <!-- Link back to the homepage -->
+            <a href="index.html" class="logo" aria-label="Home - Prince Brandford Dodoo Arthur">P.B.D.A</a>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <!-- Links pointing to sections on the homepage -->
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false" role="button" tabindex="0">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Project Introduction Section -->
+        <section class="project-intro" aria-labelledby="project-title">
+            <div class="container">
+                <h1 id="project-title">Residence Apartment Project</h1>
+                <p>
+                    A collection of modern apartment designs tailored for urban living, emphasizing efficient space utilization, contemporary aesthetics, and a comfortable, stylish environment for residents.
+                </p>
+            </div>
+        </section>
+
+        <!-- Project Overview/Details Sections -->
+        <section class="project-details-section">
+            <div class="container">
+                <h2 class="section-heading">Project Highlights</h2>
+
+                <!-- Project Detail Block 1: Living & Dining Area -->
+                <div class="project-detail-block">
+                    <div class="project-detail-image">
+                        <img src="https://images.unsplash.com/photo-1599696238382-7798b3f2e1e0?q=80&w=2070&auto=format&fit=crop" alt="Modern apartment living and dining area" loading="lazy">
+                    </div>
+                    <div class="project-detail-text">
+                        <h3>Integrated Living & Dining</h3>
+                        <p>
+                            Designed an open-concept living and dining area that maximizes natural light and creates a fluid, inviting space for relaxation and entertaining. The layout promotes connectivity while allowing for distinct functional zones.
+                        </p>
+                        <p>
+                            Material choices and furniture selection prioritize comfort, durability, and a sophisticated minimalist aesthetic, complementing the urban setting.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project Detail Block 2: Compact Kitchen Design -->
+                <div class="project-detail-block">
+                    <div class="project-detail-image">
+                        <img src="https://images.unsplash.com/photo-1556912172-45b7cdc5c781?q=80&w=2070&auto=format&fit=crop" alt="Compact and functional apartment kitchen" loading="lazy">
+                    </div>
+                    <div class="project-detail-text">
+                        <h3>Efficient & Stylish Kitchenette</h3>
+                        <p>
+                            Developed a compact yet highly functional kitchen design, integrating smart storage solutions and high-efficiency appliances. The design ensures a seamless cooking experience within a limited footprint.
+                        </p>
+                        <p>
+                            Clean lines, modern finishes, and strategic lighting contribute to a contemporary and inviting culinary space, perfect for urban dwellers.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project Detail Block 3: Bedroom & Workspace Integration -->
+                <div class="project-detail-block">
+                    <div class="project-detail-image">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11183a62?q=80&w=2070&auto=format&fit=crop" alt="Apartment bedroom with integrated workspace" loading="lazy">
+                    </div>
+                    <div class="project-detail-text">
+                        <h3>Multifunctional Bedroom & Workspace</h3>
+                        <p>
+                            Each bedroom is designed to be a tranquil retreat that also incorporates a discreet and efficient workspace. Custom built-in furniture optimizes space, providing ample storage and a comfortable area for work or study.
+                        </p>
+                        <p>
+                            The design balances privacy with access to natural light, creating a versatile room that adapts to the resident's needs throughout the day.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Image Gallery Section -->
+        <section id="apartment-gallery" aria-labelledby="gallery-heading" style="background-color: var(--light-gray);">
+            <div class="container">
+                <h2 id="gallery-heading">Photo Gallery</h2>
+                <div class="gallery-grid">
+                    <!-- Gallery Item 1: Living Room -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1599696238382-7798b3f2e1e0?q=80&w=2070&auto=format&fit=crop" alt="Modern apartment living room">
+                        <div class="gallery-description">
+                            <h3>Living Area</h3>
+                            <p>Spacious and light-filled common area.</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 2: Dining Area -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1556912172-45b7cdc5c781?q=80&w=2070&auto=format&fit=crop" alt="Apartment dining area">
+                        <div class="gallery-description">
+                            <h3>Dining Nook</h3>
+                            <p>Cozy space for meals and gatherings.</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 3: Kitchen -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1571252030999-d419369a4731?q=80&w=2070&auto=format&fit=crop" alt="Apartment kitchen with modern appliances">
+                        <div class="gallery-description">
+                            <h3>Compact Kitchen</h3>
+                            <p>Efficient and stylish cooking space.</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 4: Bedroom -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11183a62?q=80&w=2070&auto=format&fit=crop" alt="Apartment bedroom with clean design">
+                        <div class="gallery-description">
+                            <h3>Bedroom Retreat</h3>
+                            <p>Comfortable and serene sleeping area.</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 5: Bathroom -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1571252030999-d419369a4731?q=80&w=2070&auto=format&fit=crop" alt="Apartment bathroom with modern fixtures">
+                        <div class="gallery-description">
+                            <h3>Modern Bathroom</h3>
+                            <p>Sleek and functional design.</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 6: Balcony/View -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1519643381401-22c7798728ed?q=80&w=2070&auto=format&fit=crop" alt="Apartment balcony with city view">
+                        <div class="gallery-description">
+                            <h3>Urban Balcony</h3>
+                            <p>Outdoor space with city skyline views.</p>
+                        </div>
+                    </div>
+                    <!-- Add more gallery items as needed -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Prince Brandford Dodoo Arthur. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for Expanded Images -->
+    <div class="lightbox-overlay" id="lightbox">
+        <span class="lightbox-close" aria-label="Close image gallery">&times;</span>
+        <div class="lightbox-content">
+            <img src="" alt="Expanded Image" class="lightbox-image" id="lightboxImage">
+            <!-- Navigation arrows for larger screens -->
+            <span class="lightbox-nav-arrow left" id="prevImage" aria-label="Previous image">&#10094;</span>
+            <span class="lightbox-nav-arrow right" id="nextImage" aria-label="Next image">&#10095;</span>
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-links a, .logo').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                // Check if the link is an internal anchor on the current page
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    const navLinks = document.getElementById('nav-links');
+                    const menuToggle = document.getElementById('menu-toggle');
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                } else if (href.startsWith('index.html#')) {
+                    // For links pointing to anchors on the homepage, let the browser handle navigation
+                    // This ensures correct page load and then scroll
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            // Toggle aria-expanded attribute for accessibility
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // Close mobile menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        // Back to top button visibility
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        /* --- New JavaScript for Gallery and Lightbox Functionality --- */
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const closeBtn = document.querySelector('.lightbox-close');
+        const prevBtn = document.getElementById('prevImage');
+        const nextBtn = document.getElementById('nextImage');
+
+        let currentImageIndex = 0;
+        let images = []; // Array to store all image sources for navigation
+
+        // Populate images array and add click listeners to gallery items
+        galleryItems.forEach((item, index) => {
+            const imgSrc = item.querySelector('img').src;
+            images.push(imgSrc); // Add image source to the array
+
+            item.addEventListener('click', () => {
+                currentImageIndex = index; // Set current index to the clicked image
+                openLightbox(imgSrc);
+            });
+        });
+
+        // Function to open the lightbox
+        function openLightbox(src) {
+            lightboxImage.src = src; // Set the source of the expanded image
+            lightbox.classList.add('active'); // Show the lightbox
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        // Function to close the lightbox
+        function closeLightbox() {
+            lightbox.classList.remove('active'); // Hide the lightbox
+            document.body.style.overflow = ''; // Restore background scrolling
+        }
+
+        // Function to show the next image in the gallery
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length; // Loop back to start if at end
+            lightboxImage.src = images[currentImageIndex];
+        }
+
+        // Function to show the previous image in the gallery
+        function showPrevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; // Loop to end if at start
+            lightboxImage.src = images[currentImageIndex];
+        }
+
+        // Event Listeners for Lightbox Controls
+        closeBtn.addEventListener('click', closeLightbox); // Close button click
+        prevBtn.addEventListener('click', showPrevImage);   // Previous arrow click
+        nextBtn.addEventListener('click', showNextImage);   // Next arrow click
+
+        // Close lightbox on Escape key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+
+        // Swipe functionality for touch devices (on the lightbox)
+        let startX; // To store the starting X coordinate of a touch
+
+        lightbox.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX; // Get initial touch position
+        });
+
+        lightbox.addEventListener('touchend', (e) => {
+            if (!startX) return; // If no start position, exit
+
+            const endX = e.changedTouches[0].clientX; // Get end touch position
+            const diffX = startX - endX; // Calculate horizontal difference
+
+            // Define a threshold for a valid swipe (e.g., 50 pixels)
+            const swipeThreshold = 50;
+
+            if (diffX > swipeThreshold) {
+                // Swiped left (dragged left), show next image
+                showNextImage();
+            } else if (diffX < -swipeThreshold) {
+                // Swiped right (dragged right), show previous image
+                showPrevImage();
+            }
+            startX = null; // Reset startX for the next swipe
+        });
+
+        // GSAP Animations (similar to homepage for smooth reveals)
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Fade in sections on scroll
+        gsap.utils.toArray('section:not(.hero)').forEach(section => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%', // When the top of the section hits 80% of viewport height
+                    end: 'bottom top',
+                    toggleActions: 'play none none none',
+                    once: true // Animation plays only once
+                }
+            });
+        });
+
+        // Animate gallery items individually
+        gsap.utils.toArray('.gallery-item').forEach(item => {
+            gsap.from(item, {
+                opacity: 0,
+                scale: 0.9,
+                duration: 0.8,
+                ease: 'back.out(1.7)',
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 90%',
+                    toggleActions: 'play none none none',
+                    once: true
+                }
+            });
+        });
+    </script>
+</body>
+</html>
